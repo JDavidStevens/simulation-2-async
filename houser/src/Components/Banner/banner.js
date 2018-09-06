@@ -4,11 +4,11 @@ import './banner.css'
 import axios from 'axios';
 
 
-export default class Banner extends Component{
+export default class Logout extends Component{
     render(){
         return(
             <div>
-
+            
             </div>
         )
     }

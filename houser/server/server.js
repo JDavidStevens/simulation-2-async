@@ -25,11 +25,11 @@ app.use(checkForSession);
 app.post('/api/auth/login',authCtrl.login);
 app.post('/api/auth/register',authCtrl.register);
 app.post('/api/auth/logout',authCtrl.logout);
-
+app.get('/api/auth/user', authCtrl.getUser);
 //Properties Endpoints
-app.get('/api/properties',propCtrl.inventory);
-app.post('/api/properties',propCtrl.add);
-app.delete('/api/properties/:id',propCtrl.delete);
+// app.get('/api/properties',propCtrl.inventory);
+// app.post('/api/properties',propCtrl.add);
+// app.delete('/api/properties/:id',propCtrl.delete);
 
 app.listen(SERVER_PORT, ()=>{
     console.log(`Server is listening on port ${SERVER_PORT}.`)
