@@ -22,7 +22,6 @@ app.use(
         saveUninitialized: false
     })
 );
-app.use(checkForSession);
 
 //Authorization Endpoints
 app.post('/api/auth/login', authCtrl.login);
@@ -30,6 +29,7 @@ app.post('/api/auth/register', authCtrl.register);
 app.post('/api/auth/logout', authCtrl.logout);
 app.get('/api/auth/user', authCtrl.getUser);
 
+app.get('/api/checkForSession', checkForSession);
 //Properties Endpoints
 // app.get('/api/properties',propCtrl.inventory);
 // app.post('/api/properties',propCtrl.add);

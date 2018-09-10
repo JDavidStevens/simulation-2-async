@@ -1,12 +1,13 @@
 module.exports={
-    login:(req,res)=>{
+    login:(req,res,next)=>{
         const dbInstance=req.app.get('db');
-        const {session}=req;
-        const {username, password}=req.body;
-        dbInstance.login([username,password])
-        .then(user=> 
-            {session.user=user[0];
-            res.status(200).send(user)})
+        // const {session}=req;
+        // const {username, password}=req.body;
+        dbInstance.login([req.body.username,req.body.password])
+        .then( user=> 
+            {req.session.user=user[0];
+                res.status(200).send()
+            })
         .catch(err=>{
             res.status(500).send({errorMessage:"Alert"})
             console.log(err)
@@ -30,8 +31,8 @@ module.exports={
     logout: (req,res)=>{
         const {session} = req;
         session.destroy();
-        res.status(200).send(req.session);
-    },
+        res.status(200).send();
+        },
 
     getUser: (req,res)=>{
         const {session}=req;

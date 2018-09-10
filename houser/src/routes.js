@@ -11,7 +11,7 @@ import Wizard5 from './Components/Wizard5/w5';
 
 export default(
     <Switch>
-        <Route component={Login} path="/"/>
+        <Route component={Login} exact path="/"/>
         <Route component={Dashboard} path="/dashboard"/>
         <Route component={Wizard1} path="/wizard/1"/>
         <Route component={Wizard2} path="/wizard/2"/>

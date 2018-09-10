@@ -1,11 +1,10 @@
 module.exports=function(req,res,next){
-    const {session}=req;
+    // const {session}=req;
     
-    if (session.user){
+    if (req.session.user){
         res.status(200).send()
     }else{
-        res.status(403).send('unauthorized')
+        console.log('unauthorized')
+        res.status(403).send()
     }
-
-    next();
 }
