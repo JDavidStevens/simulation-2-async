@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import {Link} from 'react-router-dom';
+// import {Link} from 'react-router-dom';
 import './w2.css'
-import axios from 'axios';
+// import axios from 'axios';
 import Banner from '../Banner/banner';
 
 

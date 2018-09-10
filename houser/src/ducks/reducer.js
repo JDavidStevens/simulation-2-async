@@ -15,6 +15,7 @@ export default function(state=initialState,action){
 
         case REGISTER + '_FULFILLED':
             return Object.assign({},state,{user:payload.username})
+        default: return state;
     }
 }
 
@@ -23,6 +24,7 @@ export function login(obj,history){
         type: LOGIN,
         payload:axios.post('/api/auth/login',obj).then(response=>{
             history.push('/dashboard')
+            return response.data;
         })
     }
 }
@@ -32,6 +34,7 @@ export function register(obj,history){
         type: REGISTER,
         payload:axios.post('/api/auth/register',obj).then(response=>{
             history.push('/dashboard')
+            return response.data;
         })
     }
 }

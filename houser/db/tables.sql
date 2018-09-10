@@ -1,4 +1,4 @@
-Create Table User(
+Create Table client(
     user_id serial primary key not null,
     username varchar(25),
     password varchar(25)
@@ -6,7 +6,7 @@ Create Table User(
 
 Create Table Properties(
     property_id serial primary key not null,
-    property_name varchar(75),
+    name varchar(75),
     description varchar(500),
     loan int,
     mortgage int,

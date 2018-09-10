@@ -1,0 +1,1 @@
+select * from client where username=$1 and password=$2;

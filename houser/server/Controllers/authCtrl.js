@@ -1,36 +1,39 @@
 module.exports={
-    login:(req,res,next)=>{
+    login:(req,res)=>{
+        const dbInstance=req.app.get('db');
         const {session}=req;
         const {username, password}=req.body;
-
-        const user=users.find(user=>user.username===username && user.password===password);
-
-        if(user){
-            session.user.username=user.username;
-            res.status(200).send(session.user);
-        } else {
-            res.status(500).send('Unauthorized');
-        }
+        dbInstance.login([username,password])
+        .then(user=> 
+            {session.user=user[0];
+            res.status(200).send(user)})
+        .catch(err=>{
+            res.status(500).send({errorMessage:"Alert"})
+            console.log(err)
+        })      
     },
 
-    register: (req,res,next)=>{
+    register: (req,res)=>{
+        const dbInstance=req.app.get('db');
         const {session} = req;
         const {username,password}=req.body;
-
-        users.push({username,password});
-
-        session.user.username=username;
-
-        res.status(200).send(session.user);
+        dbInstance.register([username,password])
+        .then(user=> 
+            {session.user=user[0];
+            res.status(200).send(user)})
+        .catch(err=>{
+            res.status(500).send({errorMessage:"Alert"})
+            console.log(err)
+        })
     },
 
-    logout: (req,res,next)=>{
+    logout: (req,res)=>{
         const {session} = req;
         session.destroy();
         res.status(200).send(req.session);
     },
 
-    getUser: (req,res,next)=>{
+    getUser: (req,res)=>{
         const {session}=req;
         res.status(200).send(session.user)
     }

@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
-import {Link} from 'react-router-dom';
+// import {Link} from 'react-router-dom';
 import {connect} from "react-redux";
 import './login.css';
-import axios from 'axios';
+// import axios from 'axios';
 import {login,register} from "../../ducks/reducer";
 import Banner from '../Banner/banner';
 
@@ -21,6 +21,8 @@ class Login extends Component{
         
         this.handleChange=this.handleChange.bind(this);
     }
+
+ 
 
     login(){
         const {login,history}=this.props;
