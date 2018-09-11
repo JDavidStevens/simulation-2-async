@@ -1,10 +1,9 @@
 import React, {Component} from 'react';
-import {Link} from 'react-router-dom';
-// import {connect} from "react-redux";
 import './login.css';
 import axios from 'axios';
-// import {login,register} from "../../ducks/reducer";
-import Banner from '../Banner/banner';
+import authLogo from '../../assets/auth_logo.png';
+import './login.css'
+
 
 
 class Login extends Component{
@@ -50,22 +49,26 @@ class Login extends Component{
 
     render(){
         return(
-            <div>
-            <Banner/>
-            <div>
+            <div className="auth-page">
+            
+            <div className="auth-content">
+            <div className="login-logo">
+            <img src={authLogo} className="auth-logo" alt=''/>
+            </div>
                 <div>
-                    <h3>Username</h3>
+                    <h3 className="username">Username</h3>
                     <input className="login-input" type="text" onChange={e=>this.handleUsername(e.target.value)}/>
-                    <h3>Password</h3>
+                    <h3 className="password">Password</h3>
                     <input className="login-input" type="text" onChange={e=>this.handlePassword(e.target.value)}/>
                 </div>
                 <div>
                     <button className="login-button" onClick={this.login}>Login</button>
-                    <button className="login-button" onClick={this.register}>Register</button>
+                    <button className="register-button" onClick={this.register}>Register</button>
+                </div>
                 </div>
             </div>
+            
 
-            </div>
         )
     }
 }

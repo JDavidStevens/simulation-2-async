@@ -6,15 +6,16 @@ Create Table client(
 
 Create Table Properties(
     property_id serial primary key not null,
-    name varchar(75),
-    description varchar(500),
-    loan int,
-    mortgage int,
-    desired_rent int,
-    steet varchar(100),
+    propertyName varchar(75),
+    propertyDescription varchar(500),
+    address varchar(100),
     city varchar(50),
-    state varchar(2),
+    stateName varchar(2),
     zip int,
-    image text,
-    user_id int References user(user_id)
+    img text,
+    loanAmount int,
+    mortgage int,
+    desiredRent int,
+    recommendedRent int,
+    user_id int References client(user_id)
 );

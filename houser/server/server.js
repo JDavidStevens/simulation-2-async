@@ -30,8 +30,9 @@ app.post('/api/auth/logout', authCtrl.logout);
 app.get('/api/auth/user', authCtrl.getUser);
 
 app.get('/api/checkForSession', checkForSession);
+
 //Properties Endpoints
-// app.get('/api/properties',propCtrl.inventory);
+app.get('/api/properties/:id',propCtrl.inventory);
 // app.post('/api/properties',propCtrl.add);
 // app.delete('/api/properties/:id',propCtrl.delete);
 

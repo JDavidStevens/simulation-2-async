@@ -2,9 +2,9 @@ import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 import {updateDesiredRent} from '../../ducks/reducer';
-import axios from 'axios';
-import './w5.css'
 import Banner from '../Banner/banner';
+// import axios from 'axios';
+import './w5.css'
 import checked from '../../assets/step_completed.png';
 import active from '../../assets/step_active.png';
 
@@ -26,7 +26,7 @@ class Wizard5 extends Component{
 
         return(
         <div>
-            <Banner/>
+           <Banner/>
             <div className="tracker">
                     <h3>Add new listing</h3>
                     <Link to= '/dashboard' className="cancel">Cancel</Link>

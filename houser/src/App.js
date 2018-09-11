@@ -1,20 +1,22 @@
 import React, { Component } from 'react';
 import './App.css';
 import {HashRouter} from 'react-router-dom';
-import {Provider} from 'react-redux';
-import store from './store';
+import Banner from './Components/Banner/banner';
+
+
 import routes from './routes';
 
 class App extends Component {
   render() {
     return (
-      <Provider store={store}>
+      
       <HashRouter>
       <div className="App">
+        {/* <Banner/> */}
         {routes}
       </div>
       </HashRouter>
-      </Provider>
+      
     );
   }
 }

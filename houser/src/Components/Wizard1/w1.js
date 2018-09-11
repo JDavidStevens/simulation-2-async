@@ -3,7 +3,6 @@ import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
 import {updatePropertyName, updatePropertyDescription} from '../../ducks/reducer';
 import './w1.css'
-
 import Banner from '../Banner/banner';
 import active from '../../assets/step_active.png';
 import inactive from '../../assets/step_inactive.png';
@@ -15,7 +14,7 @@ class Wizard1 extends Component{
         const {updatePropertyName, updatePropertyDescription}=this.props;
         return(
     <div>
-            <Banner/>
+        <Banner/>
         <div className="tracker">
             <h3>Add new listing</h3>
             <Link to= '/dashboard' className="cancel">Cancel</Link>

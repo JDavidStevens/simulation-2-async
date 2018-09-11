@@ -3,7 +3,6 @@ import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
 import {updateAddress, updateCity, updateStateName,updateZip} from '../../ducks/reducer';
 import './w2.css'
-
 import Banner from '../Banner/banner';
 import checked from '../../assets/step_completed.png';
 import active from '../../assets/step_active.png';
@@ -16,7 +15,7 @@ class Wizard2 extends Component{
 
         return(
         <div>
-            <Banner/>
+          <Banner/>  
         <div className="tracker">
             <h3>Add new listing</h3>
             <Link to= '/dashboard' className="cancel">Cancel</Link>

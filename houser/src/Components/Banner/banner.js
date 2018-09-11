@@ -1,11 +1,13 @@
 import React, {Component} from 'react';
-import {Link} from 'react-router-dom';
 import './banner.css'
 import axios from 'axios';
+import {withRouter} from 'react-router-dom';
+import Login from '../Login/login';
 
 
 
-export default class Logout extends Component{
+
+class Banner extends Component{
 
     constructor(){
         super()
@@ -15,17 +17,21 @@ export default class Logout extends Component{
 
     logout(){
         axios.post('/api/auth/logout')
+        
         .then(()=> this.props.history.push('/')
-            
         )
     }
 
     render(){
+        if(this.props.location.pathName!==('/')){
         return(
             <div>
                 <button className='logout' onClick={this.logout}>Logout</button>
             
             </div>
         )
+        }
     }
 }
+
+export default withRouter(Banner)

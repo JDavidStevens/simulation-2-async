@@ -2,8 +2,8 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
 import {updateLoan,updateMortgage} from '../../ducks/reducer';
-import './w4.css'
 import Banner from '../Banner/banner';
+import './w4.css'
 import checked from '../../assets/step_completed.png';
 import active from '../../assets/step_active.png';
 import inactive from '../../assets/step_inactive.png';
