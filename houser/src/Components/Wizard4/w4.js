@@ -9,7 +9,7 @@ import active from '../../assets/step_active.png';
 import inactive from '../../assets/step_inactive.png';
 
 
-export default class Wizard4 extends Component{
+class Wizard4 extends Component{
     render(){
         const {updateLoan,updateMortgage} = this.props;
         
@@ -19,7 +19,7 @@ export default class Wizard4 extends Component{
                 <div className="tracker">
                     <h3>Add new listing</h3>
                     <Link to= '/dashboard' className="cancel">Cancel</Link>
-                    <h5>Step 2</h5>
+                    <h5>Step 4</h5>
                     <div className="circles">
                         <img src={checked} alt="checked-circle"/>
                         <img src={checked} alt="checked-circle"/>
@@ -27,7 +27,8 @@ export default class Wizard4 extends Component{
                         <img src={active} alt="active-circle"/>
                         <img src={inactive} alt="inactive-circle"/>
                     </div>
-                    <div className="inputs-container">
+                </div>
+                    <div className="input-container-4">
                         <h4 className="loan-tite">Loan Amount</h4>
                         <input className="loan-input" onChange={e=>(updateLoan(e.target.value))}/>
                         <h4 className="mortgage-title">Monthly Mortgage</h4>
@@ -35,7 +36,6 @@ export default class Wizard4 extends Component{
                     </div>
                     <Link to = '/wizard/3' className="next-step-w4">Previous Step</Link>
                     <Link to = '/wizard/5' className="next-step-w4">Next Step</Link>
-                </div>
             </div>
         )
     }

@@ -28,7 +28,7 @@ class Wizard1 extends Component{
             <img src={inactive} alt="inactive-circle"/>
             </div>
         </div>
-            <div className="w1-inputs-container">
+            <div className="input-container-1">
             <div className="property-name">
                 <h4>Property Name</h4>
                 <input type="text" className="property-name-input" onChange={e=>(updatePropertyName(e.target.value))}/>

@@ -29,7 +29,7 @@ class Wizard2 extends Component{
             <img src={inactive} alt="inactive-circle"/>
             </div>
         </div>
-        <div className="w2-inputs-container">
+        <div className="input-container-2">
             <div className="address">
                 <h4>Address</h4>
                 <input type="text" className="address-input" onChange={e=>(updateAddress(e.target.value))}/>

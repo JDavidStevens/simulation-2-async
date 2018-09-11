@@ -6,8 +6,9 @@ const initialState={
     stateName:'',
     zip:'',
     img:'',
-    loanAmount,
-    mortgage
+    loanAmount:'',
+    mortgage: '',
+    desiredRent: ''
 }
 
 const UPDATE_PROPERTY_NAME = 'UPDATE_PROPERTY_NAME';
@@ -19,6 +20,7 @@ const UPDATE_ZIP='UPDATE_ZIP';
 const UPDATE_IMG='UPDATE_IMG';
 const UPDATE_LOAN_AMOUNT='UPDATE_LOAN_AMOUNT';
 const UPDATE_MORTGAGE='UPDATE_MORTGAGE';
+const UPDATE_DESIRED_RENT='UPDATE_DESIRED_RENT';
 
 
 function reducer(state=initialState,action){
@@ -40,6 +42,8 @@ function reducer(state=initialState,action){
         case UPDATE_LOAN_AMOUNT:
             return Object.assign({},state,{loanAmount: action.payload});
         case UPDATE_MORTGAGE:
+            return Object.assign({},state,{mortgage: action.payload});
+        case UPDATE_DESIRED_RENT:
             return Object.assign({},state,{mortgage: action.payload});
         default: return state;
     }
@@ -98,6 +102,12 @@ export function updateMortgage(mortgage){
     return{
         type: UPDATE_MORTGAGE,
         payload: mortgage
+    }
+}
+export function updateDesiredRent(desiredRent){
+    return{
+        type: UPDATE_DESIRED_RENT,
+        payload: desiredRent
     }
 }
 
