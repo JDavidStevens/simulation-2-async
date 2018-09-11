@@ -1,5 +1,5 @@
-// import {createStore} from "redux";
+import {createStore} from "redux";
 
-// import reducer from './ducks/reducer';
+import reducer from './ducks/reducer';
 
-// export default createStore(reducer);
+export default createStore(reducer);
