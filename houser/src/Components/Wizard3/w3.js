@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
-import {img} from '../../ducks/reducer';
+import {updateImg} from '../../ducks/reducer';
 import './w3.css'
 import Banner from '../Banner/banner';
 import checked from '../../assets/step_completed.png';
@@ -11,7 +11,7 @@ import inactive from '../../assets/step_inactive.png';
 
 class Wizard3 extends Component{
     render(){
-        const {update_Img} = this.props;
+        const {updateImg} = this.props;
         return(
         <div>
             <Banner/>
@@ -28,11 +28,11 @@ class Wizard3 extends Component{
                 </div>
             </div>
             <div className="image-preview">
-                    <img href={this.state.img} alt="Preview"/>
+                    {/* <img href={this.state.img} alt="Preview"/> */}
             </div>
             <div className="image-url-container">
                 <h4 className="image-url-input-title">Image URL</h4>
-                <input className="image-url-input" onChange={e=>(update_Img(e.target.value))}/>
+                <input className="image-url-input" onChange={e=>(updateImg(e.target.value))}/>
             </div>
             <div>
             <Link to = '/wizard/' className="next-step-w3">Previous Step</Link>
@@ -51,4 +51,4 @@ function mapStateToProps(state){
     }
 }
 
-export default connect(mapStateToProps, {addImg})(Wizard3);
+export default connect(mapStateToProps, {updateImg})(Wizard3);

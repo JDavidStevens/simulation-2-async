@@ -17,7 +17,7 @@ class Wizard2 extends Component{
         return(
         <div>
             <Banner/>
-            <div className="tracker">
+        <div className="tracker">
             <h3>Add new listing</h3>
             <Link to= '/dashboard' className="cancel">Cancel</Link>
             <h5>Step 2</h5>
