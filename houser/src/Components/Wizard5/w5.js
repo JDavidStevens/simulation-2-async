@@ -62,9 +62,10 @@ class Wizard5 extends Component{
 }
 
 function mapStateToProps(state){
-    
+    const {desiredRent}=state;
 
     return{
+        desiredRent,
         state
     }
 

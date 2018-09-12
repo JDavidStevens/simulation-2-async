@@ -1,16 +1,15 @@
 module.exports={
 
-    // inventory:(req,res,next)=>{
-    //     const dbInstance = req.app.get('db');
+    inventory:(req,res,next)=>{
+        const dbInstance = req.app.get('db');
 
-    //     dbInstance.inventory([req.session.user.user_id])
-    //     console.log("test",req)
-    //     .then(properties=>res.status(200).send(properties))
-    //     .catch(err=>{
-    //         res.status(500).send({errorMessage: "Error"})
-    //         console.log(err)
-    //     })
-    // },
+        dbInstance.inventory([req.session.user.user_id])
+        .then(properties=>res.status(200).send(properties))
+        .catch(err=>{
+            res.status(500).send({errorMessage: "Error"})
+            console.log(err)
+        })
+    },
 
     add: (req,res,next)=>{
         const dbInstance = req.app.get('db');

@@ -32,7 +32,7 @@ app.get('/api/auth/user', authCtrl.getUser);
 app.get('/api/checkForSession', checkForSession);
 
 //Properties Endpoints
-// app.get('/api/properties/:user',propCtrl.inventory);
+app.get('/api/properties',propCtrl.inventory);
 app.post('/api/properties',propCtrl.add);
 // app.delete('/api/properties/:id',propCtrl.delete);
 

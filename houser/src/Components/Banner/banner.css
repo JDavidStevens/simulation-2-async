@@ -1,0 +1,35 @@
+.banner-container{
+    background-color: #519872;
+    height: 10vh;
+    display: flex;
+    flex-direction: row;
+    color:white;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.logo-title-container{
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+}
+
+.header-logo{
+    margin: auto;
+}
+
+.houser{
+    padding: 0px 8px 0px 8px;
+    font-size: 31px;
+    font-weight: 900;
+}
+
+.banner-dashboard{
+    font-size: 31px;
+    font-weight: 100;
+}
+
+.logout{
+    margin: 40px 525px 0px 0px;
+    font-weight: 900;
+}
+
