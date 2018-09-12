@@ -32,8 +32,8 @@ app.get('/api/auth/user', authCtrl.getUser);
 app.get('/api/checkForSession', checkForSession);
 
 //Properties Endpoints
-app.get('/api/properties/:id',propCtrl.inventory);
-// app.post('/api/properties',propCtrl.add);
+// app.get('/api/properties/:user',propCtrl.inventory);
+app.post('/api/properties',propCtrl.add);
 // app.delete('/api/properties/:id',propCtrl.delete);
 
 app.listen(SERVER_PORT, ()=>{

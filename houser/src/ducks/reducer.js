@@ -21,7 +21,7 @@ const UPDATE_IMG='UPDATE_IMG';
 const UPDATE_LOAN_AMOUNT='UPDATE_LOAN_AMOUNT';
 const UPDATE_MORTGAGE='UPDATE_MORTGAGE';
 const UPDATE_DESIRED_RENT='UPDATE_DESIRED_RENT';
-
+const UPDATE_SUBMIT_TO_DB='UPDATE_SUBMIT_TO_DB';
 
 function reducer(state=initialState,action){
     switch(action.type){
@@ -44,7 +44,10 @@ function reducer(state=initialState,action){
         case UPDATE_MORTGAGE:
             return Object.assign({},state,{mortgage: action.payload});
         case UPDATE_DESIRED_RENT:
-            return Object.assign({},state,{mortgage: action.payload});
+            return Object.assign({},state,{desiredRent: action.payload});
+        case UPDATE_SUBMIT_TO_DB:
+            return Object.assign({},initialState);
+            //this last step will reset state after we submit the info to the db
         default: return state;
     }
 

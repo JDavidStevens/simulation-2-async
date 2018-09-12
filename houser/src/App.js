@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import {HashRouter} from 'react-router-dom';
-import Banner from './Components/Banner/banner';
+// import Banner from './Components/Banner/banner';
 
 
 import routes from './routes';

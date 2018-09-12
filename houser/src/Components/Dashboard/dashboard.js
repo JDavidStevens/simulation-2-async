@@ -16,11 +16,14 @@ export default class Dashboard extends Component{
         }
     }
 
-    componentDidMount(){
-        axios.get(`/api/properties/`).then(response=>{
-            this.setState({properties:response.data})
-        })
-    }
+    // componentDidMount(){
+
+    //     axios.get(`/api/properties/`)
+        
+    //     .then(response=>{
+    //         this.setState({properties:response.data})
+    //     })
+    // }
     
     render(){
 

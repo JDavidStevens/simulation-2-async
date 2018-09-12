@@ -19,7 +19,8 @@
 
 .login-logo{
     height: 100px;
-    padding: 225px 0px 100px 0px
+    /* padding: 150px 0px 100px 0px */
+    padding: 10vh 0vh 20vh 0vh;
 }
 
 .auth-logo{

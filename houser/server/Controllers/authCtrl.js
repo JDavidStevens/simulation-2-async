@@ -6,6 +6,7 @@ module.exports={
         dbInstance.login([req.body.username,req.body.password])
         .then( user=> 
             {req.session.user=user[0];
+                console.log("session", req)
                 res.status(200).send()
             })
         .catch(err=>{
@@ -31,7 +32,7 @@ module.exports={
     logout: (req,res)=>{
         let {session} = req;
         session.destroy();
-        console.log(req.session);
+        // console.log(req.session);
         res.status(200).send();
         },
 

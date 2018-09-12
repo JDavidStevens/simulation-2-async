@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import './banner.css'
 import axios from 'axios';
 import {withRouter} from 'react-router-dom';
-import Login from '../Login/login';
+
 
 
 
@@ -17,9 +17,10 @@ class Banner extends Component{
 
     logout(){
         axios.post('/api/auth/logout')
-        
+        // console.log("history1:",this.props);
         .then(()=> this.props.history.push('/')
         )
+        // console.log("history2:",this.props);
     }
 
     render(){
