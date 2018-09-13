@@ -26,6 +26,7 @@ class Wizard5 extends Component{
             // do not add an id after '/api/properties this come from sessions which can only be found on the back-end!!!
             propertyName,propertyDescription,address,city,stateName,zip,img,loanAmount,mortgage,desiredrent
         }).then(()=>this.props.history.push('/dashboard'))
+        .catch(err=>{console.log("submit axios request")})
         
     }
 

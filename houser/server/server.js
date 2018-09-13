@@ -33,6 +33,7 @@ app.get('/api/checkForSession', checkForSession);
 
 //Properties Endpoints
 app.get('/api/properties',propCtrl.inventory);
+// app.get('/api/filter',propCtrl.filter);
 app.post('/api/properties',propCtrl.add);
 // app.delete('/api/properties/:id',propCtrl.delete);
 
