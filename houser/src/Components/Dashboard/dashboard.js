@@ -19,6 +19,7 @@ export default class Dashboard extends Component{
 
        this.filterInput=this.filterInput.bind(this);
        this.handleFilter=this.handleFilter.bind(this);
+       this.componentDidMount=this.componentDidMount.bind(this);
     }
 
     componentDidMount(){
@@ -108,7 +109,7 @@ export default class Dashboard extends Component{
                     <p className='dashboard-instructions'>List properties with "desired rent" greater than: $</p>
                     <input className="filter-input" placeholder="0" onChange={e=>(this.filterInput(e.target.value))}/>
                     <button className="filter-button" onClick= {this.handleFilter}>Filter</button>
-                    <button className='reset-filter' >Reset</button>
+                    <button className='reset-filter' onClick={this.componentDidMount}>Reset</button>
                     </div>
                     <hr className="dashboard-divider" ></hr>
                     <h4 className="home-listings">Home Listings</h4>
