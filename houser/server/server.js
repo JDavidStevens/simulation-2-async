@@ -33,9 +33,8 @@ app.get('/api/checkForSession', checkForSession);
 
 //Properties Endpoints
 app.get('/api/properties',propCtrl.inventory);
-// app.get('/api/filter',propCtrl.filter);
 app.post('/api/properties',propCtrl.add);
-// app.delete('/api/properties/:id',propCtrl.delete);
+app.delete('/api/properties/:id',propCtrl.delete);
 
 app.listen(SERVER_PORT, ()=>{
     console.log(`Server is listening on port ${SERVER_PORT}.`)

@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
-import {updateAddress, updateCity, updateStateName,updateZip} from '../../ducks/reducer';
+import {updateAddress, updateCity, updateStateName,updateZip,updateCancel} from '../../ducks/reducer';
 import './w2.css'
 import Banner from '../Banner/banner';
 import checked from '../../assets/step_completed.png';
@@ -18,7 +18,7 @@ class Wizard2 extends Component{
           <Banner/>  
         <div className="tracker">
             <h3>Add new listing</h3>
-            <Link to= '/dashboard' className="cancel">Cancel</Link>
+            <Link to= '/dashboard' className="cancel" onClick={updateCancel}>Cancel</Link>
             <h5>Step 2</h5>
             <div className="circles">
             <img src={checked} alt="checked-circle"/>

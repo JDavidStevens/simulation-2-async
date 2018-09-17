@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
-import {updateDesiredRent} from '../../ducks/reducer';
+import {updateDesiredRent,updateCancel} from '../../ducks/reducer';
 import Banner from '../Banner/banner';
 import axios from 'axios';
 import './w5.css'
@@ -32,13 +32,14 @@ class Wizard5 extends Component{
 
     render(){
         const {updateDesiredRent} = this.props;
+            
 
         return(
         <div>
            <Banner/>
             <div className="tracker">
                     <h3>Add new listing</h3>
-                    <Link to= '/dashboard' className="cancel">Cancel</Link>
+                    <Link to= '/dashboard' className="cancel" onClick={updateCancel}>Cancel</Link>
                     <h5>Step 5</h5>
                     <div className="circles">
                         <img src={checked} alt="checked-circle"/>
@@ -64,12 +65,15 @@ class Wizard5 extends Component{
 
 function mapStateToProps(state){
     const {desiredRent}=state;
-
+    const {mortgage} = state;
     return{
         desiredRent,
+        mortgage,
         state
     }
 
 }
 // since we are returning all of state, we do not need to specifically name updateDesiredRent as a mapStateToProps parameter or in the return statement
 export default connect(mapStateToProps, {updateDesiredRent})(Wizard5);
+
+//alt shift f

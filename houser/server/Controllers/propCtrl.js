@@ -68,5 +68,17 @@ module.exports = {
         res.status(500).send({ errorMessage: "Error" });
         console.log(err);
       });
+  },
+
+  delete: (req,res,next)=>{
+    const dbInstance= req.app.get('db');
+    console.log("delete check:", req.params.id)
+    dbInstance
+    .delete([req.session.user.user_id,req.params.id])
+    .then((properties)=>res.status(200).send(properties))
+    .catch(err=>{
+      res.status(500).send({errorMessage: "Error"})
+      console.log(err)
+    })
   }
 };

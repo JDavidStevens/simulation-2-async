@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
-import {updatePropertyName, updatePropertyDescription} from '../../ducks/reducer';
+import {updatePropertyName, updatePropertyDescription, updateCancel} from '../../ducks/reducer';
 import './w1.css'
 import Banner from '../Banner/banner';
 import active from '../../assets/step_active.png';
@@ -17,7 +17,7 @@ class Wizard1 extends Component{
         <Banner/>
         <div className="tracker">
             <h3>Add new listing</h3>
-            <Link to= '/dashboard' className="cancel">Cancel</Link>
+            <Link to= '/dashboard' className="cancel" onClick={updateCancel}>Cancel</Link>
             <h5>Step 1</h5>
             <div className="circles">
             <img src={active} alt="active-circle"/>
@@ -44,11 +44,12 @@ class Wizard1 extends Component{
 }
 
 function mapStateToProps(state){
-    const {propertyName,propertyDescription} = state;
+    const {propertyName,propertyDescription,cancel} = state;
 
     return {
         propertyName,
-        propertyDescription
+        propertyDescription,
+        cancel
     }
 }
 
