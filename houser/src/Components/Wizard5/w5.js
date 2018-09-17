@@ -50,7 +50,7 @@ class Wizard5 extends Component{
                     </div>
             </div>
             <div className="recommend">
-                <h5>Recommended Rent</h5>
+                <h5>Recommended Rent ${this.props.mortgage * 1.25}</h5>
             </div>
             <div className="input-container-5">
             <h4>Desired Rent</h4>

@@ -10,8 +10,33 @@ import inactive from '../../assets/step_inactive.png';
 
 
 class Wizard3 extends Component{
+    constructor(){
+        super()
+
+        this.state={
+            file:'',
+            imagePreviewUrl: ''
+        }
+        
+    }
+
+    handleImageChange(value){
+        
+            this.setState({
+                imagePreviewUrl: value
+              })
+              this.props.updateImg(value)
+}
+
     render(){
-        const {updateImg} = this.props;
+        const {handleImageChange} = this.props;
+
+        let{imagePreviewUrl}=this.state;
+        let $imagePreview=null;
+        if(imagePreviewUrl){
+            $imagePreview=(<img src={imagePreviewUrl}/>)
+        }
+
         return(
         <div>
             <Banner/>
@@ -28,11 +53,11 @@ class Wizard3 extends Component{
                 </div>
             </div>
             <div className="image-preview">
-                    {/* <img href={this.state.img} alt="Preview"/> */}
+            {$imagePreview}
             </div>
             <div className="image-url-container">
                 <h4 className="image-url-input-title">Image URL</h4>
-                <input className="image-url-input" onChange={e=>(updateImg(e.target.value))}/>
+                <input className="image-url-input"  onChange={(e)=>this.handleImageChange(e.target.value)}/>
             </div>
             <div>
             <Link to = '/wizard/' className="next-step-w3">Previous Step</Link>
