@@ -37,7 +37,7 @@ function reducer(state=initialState,action){
         case UPDATE_CITY:
             return Object.assign({},state,{city: action.payload});
         case UPDATE_STATE_NAME:
-            return Object.assign({},state,{statename: action.payload});
+            return Object.assign({},state,{stateName: action.payload});
         case UPDATE_ZIP:
             return Object.assign({},state,{zip: action.payload});
         case UPDATE_IMG:
