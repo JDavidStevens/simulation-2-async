@@ -26,13 +26,13 @@ class Wizard5 extends Component {
       img,
       loanAmount,
       mortgage,
-      desiredrent
+      desiredRent
     } = this.props.state;
     // this info is passed as props from the reducer on an object named state.
 
     axios
       .post(`/api/properties`, {
-        // do not add an id after '/api/properties this come from sessions which can only be found on the back-end!!!
+        // do not add an id after '/api/properties this comes from sessions which can only be found on the back-end!!!
         propertyName,
         propertyDescription,
         address,
@@ -42,7 +42,7 @@ class Wizard5 extends Component {
         img,
         loanAmount,
         mortgage,
-        desiredrent
+        desiredRent
       })
       .then(() => this.props.history.push("/dashboard"))
       .catch(err => {
@@ -51,7 +51,7 @@ class Wizard5 extends Component {
   }
 
   render() {
-    const { updateDesiredRent } = this.props;
+    const { updateDesiredRent} = this.props;
 
     return (
       <div>
@@ -80,6 +80,7 @@ class Wizard5 extends Component {
             </div>
             <div className="recommend">
               <h5>Recommended Rent ${this.props.mortgage * 1.25}</h5>
+              {console.log("mortgage?",this.props.mortgage)}
             </div>
             <div className="input-container-5">
               <h4 className="desired-rent-title">Desired Rent</h4>
@@ -104,10 +105,11 @@ class Wizard5 extends Component {
 }
 
 function mapStateToProps(state) {
-  // const { desiredRent } = state;
+  const { desiredRent,mortgage } = state;
   return {
-    // desiredRent,
-    state
+    desiredRent,
+    state,
+    mortgage
   };
 }
 // since we are returning all of state, we do not need to specifically name updateDesiredRent as a mapStateToProps parameter or in the return statement

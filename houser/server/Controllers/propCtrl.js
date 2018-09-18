@@ -33,7 +33,7 @@ module.exports = {
       img,
       loanAmount,
       mortgage,
-      desiredrent
+      desiredRent
     } = req.body;
 
     dbInstance
@@ -48,7 +48,7 @@ module.exports = {
         img,
         loanAmount,
         mortgage,
-        desiredrent
+        desiredRent
       ])
       // session is found on the back-end so this is where we enter req.session.user.user_id to direct the info to the correct user in the db.
       .then(res.sendStatus(200))

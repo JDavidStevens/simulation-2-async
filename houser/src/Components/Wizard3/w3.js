@@ -26,7 +26,7 @@ class Wizard3 extends Component {
   }
 
   render() {
-    const { handleImageChange } = this.props;
+    
 
     let { imagePreviewUrl } = this.state;
     let $imagePreview = null;
