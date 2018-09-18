@@ -1,79 +1,99 @@
-import React, {Component} from 'react';
-import {connect} from 'react-redux';
-import {Link} from 'react-router-dom';
-import {updateImg,updateCancel} from '../../ducks/reducer';
-import Banner from '../Banner/banner';
-import './w3.css'
-import checked from '../../assets/step_completed.png';
-import active from '../../assets/step_active.png';
-import inactive from '../../assets/step_inactive.png';
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import { Link } from "react-router-dom";
+import { updateImg, updateCancel } from "../../ducks/reducer";
+import Banner from "../Banner/banner";
+import "./w3.css";
+import checked from "../../assets/step_completed.png";
+import active from "../../assets/step_active.png";
+import inactive from "../../assets/step_inactive.png";
 
+class Wizard3 extends Component {
+  constructor() {
+    super();
 
-class Wizard3 extends Component{
-    constructor(){
-        super()
+    this.state = {
+      file: "",
+      imagePreviewUrl: ""
+    };
+  }
 
-        this.state={
-            file:'',
-            imagePreviewUrl: ''
-        }
-        
+  handleImageChange(value) {
+    this.setState({
+      imagePreviewUrl: value
+    });
+    this.props.updateImg(value);
+  }
+
+  render() {
+    const { handleImageChange } = this.props;
+
+    let { imagePreviewUrl } = this.state;
+    let $imagePreview = null;
+    if (imagePreviewUrl) {
+      $imagePreview = <img src={imagePreviewUrl} alt=""/>;
     }
 
-    handleImageChange(value){
-        
-            this.setState({
-                imagePreviewUrl: value
-              })
-              this.props.updateImg(value)
-}
-
-    render(){
-        const {handleImageChange} = this.props;
-
-        let{imagePreviewUrl}=this.state;
-        let $imagePreview=null;
-        if(imagePreviewUrl){
-            $imagePreview=(<img src={imagePreviewUrl}/>)
-        }
-
-        return(
-        <div>
-            <Banner/>
+    return (
+      <div>
+        <Banner />
+        <div className="page-border">
+          <div className="page-content">
             <div className="tracker">
-                <h3>Add new listing</h3>
-                <Link to= '/dashboard' className="cancel" onClick={updateCancel}>Cancel</Link>
-                <h5>Step 3</h5>
-                <div className="circles">
-                    <img src={checked} alt="checked-circle"/>
-                    <img src={checked} alt="checked-circle"/>
-                    <img src={active} alt="active-circle"/>
-                    <img src={inactive} alt="inactive-circle"/>
-                    <img src={inactive} alt="inactive-circle"/>
+            <div className="tracker-top">
+              <h3 className="add-new-listing">Add new listing</h3>
+              <Link
+                  className="cancel-link"
+                  to="/dashboard"
+                  onClick={updateCancel}
+                >
+                  Cancel
+                </Link>
                 </div>
+              <h5>Step 3</h5>
+              <div className="circles">
+                <img src={checked} alt="checked-circle" />
+                <img src={checked} alt="checked-circle" />
+                <img src={active} alt="active-circle" />
+                <img src={inactive} alt="inactive-circle" />
+                <img src={inactive} alt="inactive-circle" />
+              </div>
             </div>
-            <div className="image-preview">
-            {$imagePreview}
-            </div>
+            {(this.state.imagePreviewUrl)?(
+            <div className="image-preview">{$imagePreview}</div>):(
+                <input disabled placeholder="Preview" className="empty-preview"/>
+            )}
             <div className="image-url-container">
-                <h4 className="image-url-input-title">Image URL</h4>
-                <input className="image-url-input"  onChange={(e)=>this.handleImageChange(e.target.value)}/>
+              <h4 className="image-url-input-title">Image URL</h4>
+              <input
+                className="image-url-input"
+                onChange={e => this.handleImageChange(e.target.value)}
+              />
             </div>
-            <div>
-            <Link to = '/wizard/' className="next-step-w3">Previous Step</Link>
-            <Link to = '/wizard/4' className="next-step-w3">Next Step</Link>   
+            <div className="w3-nav-buttons">
+              <Link to="/wizard/2" className="previous-step-w3">
+                Previous Step
+              </Link>
+              <Link to="/wizard/4" className="next-step-w3">
+                Next Step
+              </Link>
             </div>
+          </div>
         </div>
-        )
-    }
+      </div>
+    );
+  }
 }
 
-function mapStateToProps(state){
-    const {img}=state;
+function mapStateToProps(state) {
+  const { img } = state;
 
-    return {
-        img
-    }
+  return {
+    img
+  };
 }
 
-export default connect(mapStateToProps, {updateImg})(Wizard3);
+export default connect(
+  mapStateToProps,
+  { updateImg }
+)(Wizard3);

@@ -16,6 +16,5 @@ Create Table Properties(
     loanAmount int,
     mortgage int,
     desiredRent int,
-    recommendedRent int,
     user_id int References client(user_id)
 );

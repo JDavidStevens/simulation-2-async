@@ -71,3 +71,24 @@
     text-align: left;
     margin-left: 50px;
 }
+
+.home-listings-container{
+    background-color: lightgray;
+    display: flex;
+    flex-direction: row;
+}
+
+.dashboard-image{
+    height: 150px;
+    width: 150px;
+}
+
+.name-description-container{
+    height: 150px;
+    width: 250px;
+}
+
+.details{
+    height: 150px;
+    widows: 200px;
+}

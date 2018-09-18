@@ -1,0 +1,83 @@
+.page-border {
+    height: 100%;
+    width: 100%;
+    background-color: #afd4c0;
+  }
+  
+  .page-content {
+    background-image: linear-gradient(to bottom, #e2f3ea, #ffffff);
+    height: 100%;
+    width: 50%;
+    margin: auto;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 900;
+  }
+  
+  .tracker-top {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .add-new-listing {
+    margin-top: 0px;
+    padding-top: 15px;
+    padding-left: 10px;
+    text-align: left;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 900;
+  }
+    
+  .cancel-link {
+    background-color: #fec2c2;
+    border: none;
+    border-radius: 3px;
+    margin: 16px 15px 0px 500px;
+    padding: 8px 15px 8px 15px;
+    text-decoration: none;
+    color: black;
+    font-weight: 900;
+    font-family: "Open Sans", sans-serif;
+  }
+  
+  .circles{
+    display: flex;
+    justify-content: space-around;
+    padding: 0 170px 10px 170px;
+  }
+
+  .desired-rent-title{
+    margin: 25px 430px 0px 0px; 
+  }
+
+  .desired-rent-input{
+      width: 550px;
+  }
+
+  .w5-nav-buttons{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 48.5vh;
+}
+
+  .previous-step-w5{
+    background-color: #3b5249;
+    text-decoration: none;
+    color: white;
+    border-radius: 3px;
+    padding: 8px 35px 8px 35px;
+    margin-left: 80px;
+    margin-top: 75px;
+}
+
+.complete{
+    background-color: #8aea92;
+    text-decoration: none;
+    border-radius: 3px;
+    padding: 8px 35px 8px 35px;
+    margin-right: 80px;
+    margin-top: 75px;
+}
+
+.complete:hover{
+    cursor: pointer;
+}

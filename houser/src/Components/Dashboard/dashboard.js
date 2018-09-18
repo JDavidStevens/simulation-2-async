@@ -63,10 +63,11 @@ export default class Dashboard extends Component {
       return (
         <div className="home-listings-container" key={index}>
           <div className="listing-info">
-          <button className="delete" onClick={()=>this.handleDelete(element.property_id)}><img src={Delete} alt=""/></button>
-            <img src={element.img} alt="" />
-            <h5>{element.propertyname}</h5>
-            <p>{element.propertydescription}</p>
+            <img clasName="dashboard-image" src={element.img} alt="150x150" />
+            <div className="name-description-container">
+            <h5 className="property-name">{element.propertyname}</h5>
+            <p className="property-description"> {element.propertydescription}</p>
+            </div>
             <div className="details">
               <h5>
                 Loan:
@@ -78,7 +79,7 @@ export default class Dashboard extends Component {
               </h5>
               <h5>
                 Recommended Rent:
-                {element.recommendedrent}
+                {element.mortgage * 1.25}
               </h5>
               <h5>
                 Desired Rent:
@@ -100,6 +101,7 @@ export default class Dashboard extends Component {
                 Zip:
                 {element.zip}
               </h5>
+          <button className="delete" onClick={()=>this.handleDelete(element.property_id)}><img src={Delete} alt=""/></button>
             </div>
           </div>
         </div>

@@ -2,14 +2,13 @@
     background-color: #519872;
     height: 10vh;
     display: flex;
-    flex-direction: row;
-    color:white;
+   color:white;
     font-family: 'Open Sans', sans-serif;
 }
 
 .logo-title-container{
     display: flex;
-    flex-direction: row;
+    justify-content: space-around;
     margin: auto;
 }
 
@@ -28,8 +27,16 @@
     font-weight: 100;
 }
 
+.logout-container{
+    margin-right: 525px;
+    margin-top: 40px; 
+}
+
 .logout{
-    margin: 40px 525px 0px 0px;
     font-weight: 900;
+   }
+
+.logout:hover{
+    cursor: pointer;
 }
 
