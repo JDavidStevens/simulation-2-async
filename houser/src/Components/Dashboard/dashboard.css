@@ -1,26 +1,28 @@
 .page-border{
-    height: 100%;
+    height: 100vh;
     width: 100%;
     background-color: #AFD4C0;
 }
 
 .page-content{
     background-image: linear-gradient(to bottom, #e2f3ea, #ffffff);
-    height: 100%;
+    height: 100vh;
     width: 50%;
     margin: auto;
 }
 
-.add-new-prop-button{
+.add-link{
+    padding-top: 30px;
+    padding-bottom: 40px;
+}
+
+.add-new-property{
     background-color: #8aea92;
     border-radius: 3px;
     width: 300px;
     height: 60px;
-    margin:25px 0px 35px 0px;
+    padding: 5px 5px;
     border-style: none;
-}
-
-.add-new-property{
     text-decoration: none;
     font-size: 23px;
     color: black;
@@ -52,6 +54,10 @@
     font-size: 20px;
 }
 
+.filter-button:hover{
+    cursor: pointer;
+}
+
 .reset-filter{
     background-color: #3b5249;
     border-radius: 3px;
@@ -59,6 +65,10 @@
     width: 75px;
     color: white;
     font-size: 20px;
+}
+
+.reset-filter:hover{
+    cursor: pointer;
 }
 
 .dashboard-divider{
@@ -70,12 +80,31 @@
 .home-listings{
     text-align: left;
     margin-left: 50px;
-}
+    }
 
 .home-listings-container{
     background-color: lightgray;
     display: flex;
-    flex-direction: row;
+    margin: 25px 25px 25px 25px;
+    border-radius: 3px;
+    height: 150px;
+    
+    }
+
+.image-container{
+    height: 150px;
+    width: 150px;
+    background-color: rgb(190, 190, 190);
+    margin: 0 0 0 0;
+}
+
+.img-placeholder{
+    height: 145px;
+    width: 150px;
+    background-color: rgb(190, 190, 190);
+    border: none;
+    text-align: center;
+
 }
 
 .dashboard-image{
@@ -85,10 +114,55 @@
 
 .name-description-container{
     height: 150px;
-    width: 250px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    margin-left: -25px;
+}
+
+.property-description{
+    font-weight: 100;
+}
+
+.vl{
+    height: 125px;
+    margin: 15px 15px 30px 15px;
+    background-color: black; 
+    width: 1px;
 }
 
 .details{
     height: 150px;
-    widows: 200px;
+    width: 300px;
+    display: flex;
 }
+ .details-info{
+     list-style-type: none;
+     font-size: 12px;
+     white-space: nowrap;
+     text-align: left;
+     margin-top:5px;
+ }
+
+.delete-container{
+    background-color: lightgray;
+    margin-left: 80%;
+    width: 25px;
+}
+
+.delete{
+    background-color: lightgray;
+    border-style: none;
+    padding-left: 0px;
+    margin-top: 5px;
+    }
+
+.delete:hover{
+    cursor: pointer;
+}
+
+.page-end{
+    margin-bottom: 65.7vh;
+}
+
+

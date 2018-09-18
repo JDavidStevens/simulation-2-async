@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "./dashboard.css";
 import axios from "axios";
 import Banner from "../Banner/banner";
-import Delete from '../../assets/delete_icon.png';
+import Delete from "../../assets/delete_icon.png";
 
 export default class Dashboard extends Component {
   constructor() {
@@ -18,14 +18,14 @@ export default class Dashboard extends Component {
     this.filterInput = this.filterInput.bind(this);
     this.handleFilter = this.handleFilter.bind(this);
     this.componentDidMount = this.componentDidMount.bind(this);
-    this.handleDelete=this.handleDelete.bind(this);
+    this.handleDelete = this.handleDelete.bind(this);
   }
 
   componentDidMount() {
     axios
       .get(`/api/properties`)
       .then(response => {
-        this.setState({ properties: response.data});
+        this.setState({ properties: response.data });
       })
       .catch(err => {
         console.log("allprops axios request");
@@ -41,7 +41,7 @@ export default class Dashboard extends Component {
       .get(`/api/properties?filter=${this.state.filterValue}`)
       // console.log("prefilter",this.state.filterValue)
       .then(response => {
-        this.setState({ properties: response.data,filterValue: ''});
+        this.setState({ properties: response.data, filterValue: "" });
 
         console.log("filterGet:", response.data);
       })
@@ -50,58 +50,68 @@ export default class Dashboard extends Component {
       });
   }
 
-  handleDelete(property_id){
-    axios.delete(`/api/properties/${property_id}`)
-    
-    .then(results=>{
-      console.log("delete reply:",results)
-      this.setState({properties: results.data})})
+  handleDelete(property_id) {
+    axios
+      .delete(`/api/properties/${property_id}`)
+
+      .then(results => {
+        console.log("delete reply:", results);
+        this.setState({ properties: results.data });
+      });
   }
 
   render() {
     let home = this.state.properties.map((element, index) => {
       return (
         <div className="home-listings-container" key={index}>
-          <div className="listing-info">
-            <img clasName="dashboard-image" src={element.img} alt="150x150" />
-            <div className="name-description-container">
+          <div className="image-container">
+            {element.image ? (
+              <img clasName="dashboard-image" src={element.img} alt="" />
+            ) : (
+              <input
+                className="img-placeholder"
+                disabled
+                placeholder="150 x 150"
+              />
+            )}
+          </div>
+          <div className="name-description-container">
             <h5 className="property-name">{element.propertyname}</h5>
-            <p className="property-description"> {element.propertydescription}</p>
-            </div>
-            <div className="details">
-              <h5>
-                Loan:
-                {element.loanamount}
-              </h5>
-              <h5>
-                Monthly Mortgage:
-                {element.mortgage}
-              </h5>
-              <h5>
-                Recommended Rent:
-                {element.mortgage * 1.25}
-              </h5>
-              <h5>
-                Desired Rent:
-                {element.desiredrent}
-              </h5>
-              <h5>
+            <p className="property-description">
+              {element.propertydescription}
+            </p>
+          </div>
+          <div className="vl" />
+          <div className="details">
+            <ul className="details-info">
+              <li>Loan: ${element.loanamount}</li>
+              <li>Monthly Mortgage: ${element.mortgage}</li>
+              <li>Recommended Rent: ${element.mortgage * 1.25}</li>
+              <li>Desired Rent: ${element.desiredrent}</li>
+              <li>
                 Address:
-                {element.address}
-              </h5>
-              <h5>
+                {" " + element.address}
+              </li>
+              <li>
                 City:
-                {element.city}
-              </h5>
-              <h5>
+                {" " + element.city}
+              </li>
+              <li>
                 State:
-                {element.statename}
-              </h5>
-              <h5>
+                {" " + element.statename}
+              </li>
+              <li>
                 Zip:
-                {element.zip}
-              </h5>
-          <button className="delete" onClick={()=>this.handleDelete(element.property_id)}><img src={Delete} alt=""/></button>
+                {" " + element.zip}
+              </li>
+            </ul>
+            <div className="delete-container">
+              <button
+                className="delete"
+                onClick={() => this.handleDelete(element.property_id)}
+              >
+                <img src={Delete} alt="" />
+              </button>
             </div>
           </div>
         </div>
@@ -109,16 +119,14 @@ export default class Dashboard extends Component {
     });
 
     return (
-      <div>
+      <div className="page-border">
         <Banner />
-        <div className="page-border">
+        <div>
           <div className="page-content">
             <div className="add-link">
-              <button className="add-new-prop-button">
-                <Link to="/wizard/1" className="add-new-property">
-                  Add new property
-                </Link>
-              </button>
+              <Link to="/wizard/1" className="add-new-property">
+                Add new property
+              </Link>
             </div>
             <div className="filter-container">
               <p className="dashboard-instructions">
@@ -140,6 +148,7 @@ export default class Dashboard extends Component {
             <hr className="dashboard-divider" />
             <h4 className="home-listings">Home Listings</h4>
             <div>{home}</div>
+        <div className="page-end" />
           </div>
         </div>
       </div>
