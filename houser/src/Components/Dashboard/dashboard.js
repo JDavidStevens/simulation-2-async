@@ -155,3 +155,8 @@ export default class Dashboard extends Component {
     );
   }
 }
+
+
+// axios.get('/api/checkForSession').catch((()=>{
+//   (this.props.history.push("/"))
+// }))

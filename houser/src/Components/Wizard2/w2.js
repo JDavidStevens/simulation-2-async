@@ -55,6 +55,7 @@ class Wizard2 extends Component {
                   type="text"
                   className="address-input"
                   onChange={e => updateAddress(e.target.value)}
+                  value={this.props.address}
                 />
               </div>
               <div className="cityState">
@@ -64,6 +65,7 @@ class Wizard2 extends Component {
                     type="text"
                     className="city-input"
                     onChange={e => updateCity(e.target.value)}
+                    value={this.props.city}
                   />
                 </div>
                 <div className="state">
@@ -72,6 +74,7 @@ class Wizard2 extends Component {
                     type="text"
                     className="state-input"
                     onChange={e => updateStateName(e.target.value)}
+                    value={this.props.stateName}
                   />
                 </div>
               </div>
@@ -81,6 +84,7 @@ class Wizard2 extends Component {
                   type="text"
                   className="zip-input"
                   onChange={e => updateZip(e.target.value)}
+                  value={this.props.zip}
                 />
               </div>
               <div className="w2-nav-buttons">

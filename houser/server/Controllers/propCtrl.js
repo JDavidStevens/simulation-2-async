@@ -1,7 +1,7 @@
 module.exports = {
   inventory: (req, res, next) => {
     const dbInstance = req.app.get("db");
-    console.log(req.query.filter)
+    // console.log(req.query.filter)
     if (req.query.filter) {
       dbInstance
         .filter([req.session.user.user_id, req.query.filter])
@@ -72,7 +72,7 @@ module.exports = {
 
   delete: (req,res,next)=>{
     const dbInstance= req.app.get('db');
-    console.log("delete check:", req.params.id)
+    // console.log("delete check:", req.params.id)
     dbInstance
     .delete([req.session.user.user_id,req.params.id])
     .then((properties)=>res.status(200).send(properties))

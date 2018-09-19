@@ -55,6 +55,7 @@
 .property-description {
   font-family: "Open Sans", sans-serif;
   margin: 30px 425px 5px 50px;
+  font-weight: 900;
 }
 
 .property-description-input {

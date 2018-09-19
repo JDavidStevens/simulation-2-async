@@ -42,11 +42,13 @@ class Wizard4 extends Component {
               <input
                 className="loan-input"
                 onChange={e => updateLoan(e.target.value)}
+                value={this.props.loanAmount}
               />
               <h4 className="mortgage-title">Monthly Mortgage</h4>
               <input
                 className="mortgage-input"
                 onChange={e => updateMortgage(e.target.value)}
+                value={this.props.mortgage}
               />
             </div>
             <div className="w4-nav-buttons">

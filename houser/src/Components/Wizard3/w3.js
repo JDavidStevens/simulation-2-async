@@ -25,6 +25,10 @@ class Wizard3 extends Component {
     this.props.updateImg(value);
   }
 
+  goBack(){
+    window.history.back();
+  }
+
   render() {
     
 
@@ -68,6 +72,7 @@ class Wizard3 extends Component {
               <input
                 className="image-url-input"
                 onChange={e => this.handleImageChange(e.target.value)}
+                value={this.props.img}
               />
             </div>
             <div className="w3-nav-buttons">

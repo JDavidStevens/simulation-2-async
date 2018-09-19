@@ -12,6 +12,7 @@ import active from "../../assets/step_active.png";
 import inactive from "../../assets/step_inactive.png";
 
 class Wizard1 extends Component {
+  
   render() {
     const { updatePropertyName, updatePropertyDescription } = this.props;
     return (
@@ -25,7 +26,7 @@ class Wizard1 extends Component {
                 <Link
                   className="cancel-link"
                   to="/dashboard"
-                  onClick={updateCancel}
+                  onClick={this.updateCancel}
                 >
                   Cancel
                 </Link>
@@ -46,15 +47,26 @@ class Wizard1 extends Component {
                   type="text"
                   className="property-name-input"
                   onChange={e => updatePropertyName(e.target.value)}
+                  value={this.props.propertyName}
                 />
               </div>
               <div>
                 <h4 className="property-description">Property Description</h4>
-                <textarea
-                  type="text"
-                  className="property-description-input"
-                  onChange={e => updatePropertyDescription(e.target.value)}
-                />
+                {this.props.propertyDescription ? (
+                  <textarea
+                    type="text"
+                    className="property-description-input"
+                    onChange={e => updatePropertyDescription(e.target.value)}
+                  >
+                    {this.props.propertyDescription}
+                  </textarea>
+                ) : (
+                  <textarea
+                    type="text"
+                    className="property-description-input"
+                    onChange={e => updatePropertyDescription(e.target.value)}
+                  />
+                )}
               </div>
               <button className="next-step-button">
                 <Link to="/wizard/2" className="next-step-w1">
@@ -70,7 +82,7 @@ class Wizard1 extends Component {
 }
 
 function mapStateToProps(state) {
-  const { propertyName, propertyDescription, cancel } = state;
+  const { propertyName, propertyDescription,cancel } = state;
 
   return {
     propertyName,
@@ -81,5 +93,5 @@ function mapStateToProps(state) {
 
 export default connect(
   mapStateToProps,
-  { updatePropertyName, updatePropertyDescription }
+  { updatePropertyName, updatePropertyDescription, updateCancel }
 )(Wizard1);

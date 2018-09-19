@@ -14,13 +14,11 @@ class Banner extends Component {
   logout() {
     axios
       .post("/api/auth/logout")
-      // console.log("history1:",this.props);
       .then(() => this.props.history.push("/"))
       .catch(err => {
         console.log("logout axios request");
       });
-    // console.log("history2:",this.props);
-  }
+    }
 
   render() {
     if (this.props.location.pathName !== "/") {
