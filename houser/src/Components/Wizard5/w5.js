@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import { updateDesiredRent, updateCancel } from "../../ducks/reducer";
+import { updateDesiredRent, updateCancel} from "../../ducks/reducer";
 import Banner from "../Banner/banner";
 import axios from "axios";
 import "./w5.css";
@@ -26,7 +26,7 @@ class Wizard5 extends Component {
       img,
       loanAmount,
       mortgage,
-      desiredRent
+      desiredRent,
     } = this.props.state;
     // this info is passed as props from the reducer on an object named state.
 
@@ -51,7 +51,8 @@ class Wizard5 extends Component {
   }
 
   render() {
-    const { updateDesiredRent} = this.props;
+    const { updateDesiredRent,updateCancel} = this.props;
+    
 
     return (
       <div>
@@ -111,19 +112,12 @@ function mapStateToProps(state) {
     mortgage
   };
 }
+//connects data
 // since we are returning all of state, we do not need to specifically name updateDesiredRent as a mapStateToProps parameter or in the return statement
 export default connect(
   mapStateToProps,
-  { updateDesiredRent }
+  { updateDesiredRent, updateCancel}
 )(Wizard5);
 
 //alt shift f
 
-// function mapStateToProps(state) {
-//   const { desiredRent,mortgage } = state;
-//   return {
-//     desiredRent,
-//     state,
-//     mortgage
-//   };
-// }

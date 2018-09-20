@@ -47,7 +47,7 @@ class Wizard3 extends Component {
                 <Link
                   className="cancel-link"
                   to="/dashboard"
-                  onClick={updateCancel}
+                  onClick={this.props.updateCancel}
                 >
                   Cancel
                 </Link>
@@ -99,5 +99,5 @@ function mapStateToProps(state) {
 
 export default connect(
   mapStateToProps,
-  { updateImg }
+  { updateImg,updateCancel }
 )(Wizard3);

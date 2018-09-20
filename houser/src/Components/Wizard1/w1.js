@@ -14,7 +14,7 @@ import inactive from "../../assets/step_inactive.png";
 class Wizard1 extends Component {
   
   render() {
-    const { updatePropertyName, updatePropertyDescription } = this.props;
+    const { updatePropertyName, updatePropertyDescription,updateCancel } = this.props;
     return (
       <div>
         <Banner />
@@ -26,7 +26,7 @@ class Wizard1 extends Component {
                 <Link
                   className="cancel-link"
                   to="/dashboard"
-                  onClick={this.updateCancel}
+                  onClick={updateCancel}
                 >
                   Cancel
                 </Link>
@@ -87,7 +87,6 @@ function mapStateToProps(state) {
   return {
     propertyName,
     propertyDescription,
-    cancel
   };
 }
 

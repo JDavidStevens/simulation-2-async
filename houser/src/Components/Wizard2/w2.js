@@ -20,7 +20,8 @@ class Wizard2 extends Component {
       updateAddress,
       updateCity,
       updateStateName,
-      updateZip
+      updateZip,
+      updateCancel
     } = this.props;
 
     return (
@@ -116,5 +117,5 @@ function mapStateToProps(state) {
 
 export default connect(
   mapStateToProps,
-  { updateAddress, updateCity, updateStateName, updateZip }
+  { updateAddress, updateCity, updateStateName, updateZip,updateCancel }
 )(Wizard2);

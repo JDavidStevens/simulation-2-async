@@ -26,10 +26,8 @@ class Login extends Component {
         .then(response => {
           this.props.history.push("/dashboard");
         })
-        // .catch(err => {
-        //   console.log("login axios request");
-          .catch(()=>{
-            (this.props.history.push("/"))
+        .catch(() => {
+          this.props.history.push("/");
         });
     } else {
       alert(
@@ -50,9 +48,7 @@ class Login extends Component {
           console.log("register axios request");
         });
     } else {
-      alert(
-        "Please enter a username and password to register for an account"
-      );
+      alert("Please enter a username and password to register for an account");
     }
   }
 
@@ -100,3 +96,24 @@ class Login extends Component {
 }
 
 export default Login;
+
+// login() {
+//   const { username, password } = this.state;
+
+//   if (username !== "" && password !== "") {
+//     axios
+//       .post(`/api/auth/login`, { username: username, password: password })
+//       .then(response => {
+//         this.props.history.push("/dashboard");
+//       })
+//       // .catch(err => {
+//       //   console.log("login axios request");
+//         .catch(()=>{
+//           (this.props.history.push("/"))
+//       });
+//   } else {
+//     alert(
+//       "Please enter your username and password or register for an account"
+//     );
+//   }
+// }

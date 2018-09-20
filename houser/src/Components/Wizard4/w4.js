@@ -10,7 +10,7 @@ import inactive from "../../assets/step_inactive.png";
 
 class Wizard4 extends Component {
   render() {
-    const { updateLoan, updateMortgage } = this.props;
+    const { updateLoan, updateMortgage, updateCancel } = this.props;
 
     return (
       <div>
@@ -77,5 +77,5 @@ function mapStateToProps(state) {
 
 export default connect(
   mapStateToProps,
-  { updateLoan, updateMortgage }
+  { updateLoan, updateMortgage,updateCancel }
 )(Wizard4);

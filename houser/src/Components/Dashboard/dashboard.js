@@ -75,7 +75,7 @@ export default class Dashboard extends Component {
           <div className="image-container">
           {/* <img clasName="dashboard-image" src={element.img} alt="150 x 150" /> */}
             {element.img ? (
-              <img clasName="dashboard-image" src={element.img}/>
+              <img clasName="dashboard-image" src={element.img} alt=""/>
             ) : (
               <input
                 className="img-placeholder"
@@ -114,6 +114,7 @@ export default class Dashboard extends Component {
                 {" " + element.zip}
               </li>
             </ul>
+            </div>
             <div className="delete-container">
               <button
                 className="delete"
@@ -122,7 +123,6 @@ export default class Dashboard extends Component {
                 <img src={Delete} alt="" className="delete-icon"/>
               </button>
             </div>
-          </div>
         </div>
       );
     });
