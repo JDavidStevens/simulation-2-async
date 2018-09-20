@@ -51,7 +51,7 @@ class Wizard1 extends Component {
                 />
               </div>
               <div>
-                <h4 className="property-description">Property Description</h4>
+                <h4 className="property-description-w1">Property Description</h4>
                 {this.props.propertyDescription ? (
                   <textarea
                     type="text"

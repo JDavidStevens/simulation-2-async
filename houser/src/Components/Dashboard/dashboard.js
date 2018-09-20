@@ -23,6 +23,14 @@ export default class Dashboard extends Component {
 
   componentDidMount() {
     axios
+      .get("/api/checkForSession")
+      .catch(() => {
+        this.props.history.push("/");
+        alert("Please enter a valid username and password");
+      })
+      
+
+    axios
       .get(`/api/properties`)
       .then(response => {
         this.setState({ properties: response.data });
@@ -65,8 +73,9 @@ export default class Dashboard extends Component {
       return (
         <div className="home-listings-container" key={index}>
           <div className="image-container">
-            {element.image ? (
-              <img clasName="dashboard-image" src={element.img} alt="" />
+          {/* <img clasName="dashboard-image" src={element.img} alt="150 x 150" /> */}
+            {element.img ? (
+              <img clasName="dashboard-image" src={element.img}/>
             ) : (
               <input
                 className="img-placeholder"
@@ -110,7 +119,7 @@ export default class Dashboard extends Component {
                 className="delete"
                 onClick={() => this.handleDelete(element.property_id)}
               >
-                <img src={Delete} alt="" />
+                <img src={Delete} alt="" className="delete-icon"/>
               </button>
             </div>
           </div>
@@ -148,15 +157,10 @@ export default class Dashboard extends Component {
             <hr className="dashboard-divider" />
             <h4 className="home-listings">Home Listings</h4>
             <div>{home}</div>
-        <div className="page-end" />
+            <div className="page-end" />
           </div>
         </div>
       </div>
     );
   }
 }
-
-
-// axios.get('/api/checkForSession').catch((()=>{
-//   (this.props.history.push("/"))
-// }))

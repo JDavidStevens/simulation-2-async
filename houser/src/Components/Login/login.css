@@ -54,6 +54,10 @@
     height: 40px;
 }
 
+.login-button:hover{
+    cursor: pointer;
+}
+
 .register-button{
     background-color: #3b5249;
     font-weight: 900;
@@ -63,5 +67,8 @@
     width: 140px;
     height: 40px;
     color: white;
+}
 
+.register-button:hover{
+    cursor: pointer;
 }

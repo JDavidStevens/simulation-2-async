@@ -95,21 +95,23 @@
     height: 150px;
     width: 150px;
     background-color: rgb(190, 190, 190);
-    margin: 0 0 0 0;
+    /* margin: 0 0 0 0; */
+    color: grey;
 }
 
 .img-placeholder{
-    height: 145px;
-    width: 150px;
+    height: 98%;
+    width: 100%;
     background-color: rgb(190, 190, 190);
     border: none;
     text-align: center;
-
 }
 
-.dashboard-image{
-    height: 150px;
-    width: 150px;
+img{
+    max-height: 100%;
+    max-width: 100%;
+    line-height: 150px;
+    text-align: center;
 }
 
 .name-description-container{
@@ -118,10 +120,18 @@
     display: flex;
     flex-direction: column;
     margin-left: -25px;
+    white-space: normal;
+}
+
+.property-name{
+    white-space: nowrap;
 }
 
 .property-description{
-    font-weight: 100;
+    font-size: 10px;
+    white-space: pre-wrap;
+    width: 285px;
+    text-align: center;
 }
 
 .vl{
@@ -159,6 +169,10 @@
 
 .delete:hover{
     cursor: pointer;
+}
+
+.delete-icon{
+    
 }
 
 .page-end{

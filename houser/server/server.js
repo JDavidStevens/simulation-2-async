@@ -2,10 +2,12 @@ require('dotenv').config();
 const massive = require('massive');
 const express = require('express');
 const bodyParser=require('body-parser');
+const cors = require('cors');
 const authCtrl=require('./Controllers/authCtrl');
 const propCtrl=require('./Controllers/propCtrl');
 const session=require('express-session');
 const checkForSession =require('./middlewares/checkForSession');
+const path=require('path');
 
 let {SERVER_PORT,SESSION_SECRET,CONNECTION_STRING}=process.env;
 
@@ -15,6 +17,8 @@ massive(CONNECTION_STRING).then(dbInstance=>{
 }).catch(err=>console.log(err));
 
 app.use(bodyParser.json());
+app.use(cors());
+app.use(express.static(path.join(__dirname,'src')));
 app.use(
     session({
         secret: SESSION_SECRET,
@@ -27,7 +31,6 @@ app.use(
 app.post('/api/auth/login', authCtrl.login);
 app.post('/api/auth/register', authCtrl.register);
 app.post('/api/auth/logout', authCtrl.logout);
-app.get('/api/auth/user', authCtrl.getUser);
 
 app.get('/api/checkForSession', checkForSession);
 

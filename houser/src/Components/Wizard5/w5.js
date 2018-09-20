@@ -105,9 +105,8 @@ class Wizard5 extends Component {
 }
 
 function mapStateToProps(state) {
-  const { desiredRent,mortgage } = state;
+  const { mortgage } = state;
   return {
-    desiredRent,
     state,
     mortgage
   };
@@ -119,3 +118,12 @@ export default connect(
 )(Wizard5);
 
 //alt shift f
+
+// function mapStateToProps(state) {
+//   const { desiredRent,mortgage } = state;
+//   return {
+//     desiredRent,
+//     state,
+//     mortgage
+//   };
+// }

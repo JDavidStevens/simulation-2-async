@@ -8,8 +8,7 @@ module.exports={
             {req.session.user=user[0];
                 
                 res.status(200).send()
-            })
-        .catch(err=>{
+            }).catch(err=>{
             res.status(500).send({errorMessage:"Alert"})
             console.log(err)
         })      
@@ -41,3 +40,5 @@ module.exports={
         res.status(200).send(session.user)
     }
 }
+
+

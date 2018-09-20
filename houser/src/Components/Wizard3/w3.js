@@ -25,17 +25,15 @@ class Wizard3 extends Component {
     this.props.updateImg(value);
   }
 
-  goBack(){
+  goBack() {
     window.history.back();
   }
 
   render() {
-    
-
     let { imagePreviewUrl } = this.state;
     let $imagePreview = null;
     if (imagePreviewUrl) {
-      $imagePreview = <img src={imagePreviewUrl} alt=""/>;
+      $imagePreview = <img src={imagePreviewUrl} alt="" />;
     }
 
     return (
@@ -44,16 +42,16 @@ class Wizard3 extends Component {
         <div className="page-border">
           <div className="page-content">
             <div className="tracker">
-            <div className="tracker-top">
-              <h3 className="add-new-listing">Add new listing</h3>
-              <Link
+              <div className="tracker-top">
+                <h3 className="add-new-listing">Add new listing</h3>
+                <Link
                   className="cancel-link"
                   to="/dashboard"
                   onClick={updateCancel}
                 >
                   Cancel
                 </Link>
-                </div>
+              </div>
               <h5>Step 3</h5>
               <div className="circles">
                 <img src={checked} alt="checked-circle" />
@@ -63,9 +61,10 @@ class Wizard3 extends Component {
                 <img src={inactive} alt="inactive-circle" />
               </div>
             </div>
-            {(this.state.imagePreviewUrl)?(
-            <div className="image-preview">{$imagePreview}</div>):(
-                <input disabled placeholder="Preview" className="empty-preview"/>
+            {this.state.imagePreviewUrl ? (
+              <div className="image-preview">{$imagePreview}</div>
+            ) : (
+              <input disabled placeholder="Preview" className="empty-preview" />
             )}
             <div className="image-url-container">
               <h4 className="image-url-input-title">Image URL</h4>

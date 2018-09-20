@@ -26,8 +26,10 @@ class Login extends Component {
         .then(response => {
           this.props.history.push("/dashboard");
         })
-        .catch(err => {
-          console.log("login axios request");
+        // .catch(err => {
+        //   console.log("login axios request");
+          .catch(()=>{
+            (this.props.history.push("/"))
         });
     } else {
       alert(
@@ -49,7 +51,7 @@ class Login extends Component {
         });
     } else {
       alert(
-        "Please enter your username and password or register for an account"
+        "Please enter a username and password to register for an account"
       );
     }
   }

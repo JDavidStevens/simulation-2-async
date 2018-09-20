@@ -1,4 +1,4 @@
-var initialState = {
+const initialState = {
   propertyName: "",
   propertyDescription: "",
   address: "",
@@ -22,6 +22,7 @@ const UPDATE_IMG = "UPDATE_IMG";
 const UPDATE_LOAN_AMOUNT = "UPDATE_LOAN_AMOUNT";
 const UPDATE_MORTGAGE = "UPDATE_MORTGAGE";
 const UPDATE_DESIRED_RENT = "UPDATE_DESIRED_RENT";
+const UPDATE_SUBMIT="UPDATE_SUBMIT";
 
 
 function reducer(state = initialState, action) {
@@ -59,8 +60,8 @@ function reducer(state = initialState, action) {
       return Object.assign({}, state, { mortgage: action.payload });
     case UPDATE_DESIRED_RENT:
       return Object.assign({}, state, { desiredRent: action.payload });
-    // case UPDATE_SUBMIT_TO_DB:
-    //     return Object.assign({},initialState);
+    case UPDATE_SUBMIT:
+        return Object.assign({},initialState);
     //this last step will CANCEL state after we submit the info to the db
     default:
       return state;
@@ -133,11 +134,11 @@ export function updateDesiredRent(desiredRent) {
     payload: desiredRent
   };
 }
-// export function updateSubmitToDb(submitToDb){
-//     return{
-//         type: UPDATE_SUBMIT_TO_DB,
-//         payload: submitToDb
-//     }
-// }
+export function updateSubmit(){
+    return{
+        type: UPDATE_SUBMIT
+        // payload: submit
+    }
+}
 
 export default reducer;
