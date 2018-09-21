@@ -13,6 +13,7 @@ const initialState = {
   desiredRent: ""
 };
 
+////////////////////ACTION TYPES///////////////////////
 const UPDATE_CANCEL = "UPDATE_CANCEL";
 const UPDATE_PROPERTY_NAME = "UPDATE_PROPERTY_NAME";
 const UPDATE_PROPERTY_DESCRIPTION = "UPDATE_PROPERTY_DESCRIPTION";
@@ -24,9 +25,9 @@ const UPDATE_IMG = "UPDATE_IMG";
 const UPDATE_LOAN_AMOUNT = "UPDATE_LOAN_AMOUNT";
 const UPDATE_MORTGAGE = "UPDATE_MORTGAGE";
 const UPDATE_DESIRED_RENT = "UPDATE_DESIRED_RENT";
-// const UPDATE_SUBMIT="UPDATE_SUBMIT";
+const UPDATE_SUBMIT="UPDATE_SUBMIT";
 
-
+///////////////////SWITCH STATEMENT-determines wihch part of state to update/////////////////////////
 function reducer(state = initialState, action) {
   switch (action.type) {
     case UPDATE_CANCEL:
@@ -62,14 +63,16 @@ function reducer(state = initialState, action) {
       return Object.assign({}, state, { mortgage: action.payload });
     case UPDATE_DESIRED_RENT:
       return Object.assign({}, state, { desiredRent: action.payload });
-    // case UPDATE_SUBMIT:
-    //     return Object.assign({},initialState);
+    case UPDATE_SUBMIT:
+        return Object.assign({},initialState);
+        
     //this last step will CANCEL state after we submit the info to the db
     default:
       return state;
   }
 }
 
+///////////////ACTION CREATORS///////////////////////////
 export function updateCancel(history) {
   return {
     type: UPDATE_CANCEL,
@@ -136,10 +139,10 @@ export function updateDesiredRent(desiredRent) {
     payload: desiredRent
   };
 }
-// export function updateSubmit(){
-//     return{
-//         type: UPDATE_SUBMIT,   
-//     }
-// }
+export function updateSubmit(){
+    return{
+        type: UPDATE_SUBMIT
+    }
+}
 
 export default reducer;

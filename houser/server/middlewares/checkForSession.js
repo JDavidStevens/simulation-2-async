@@ -5,6 +5,6 @@ module.exports=function(req,res,next){
         res.status(200).send()
     }else{
         console.log('unauthorized')
-        res.status(403).send(this.props.history.push("/"))
+        res.sendStatus(403)
     }
 }

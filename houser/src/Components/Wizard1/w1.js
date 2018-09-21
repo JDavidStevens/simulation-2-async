@@ -82,7 +82,7 @@ class Wizard1 extends Component {
 }
 
 function mapStateToProps(state) {
-  const { propertyName, propertyDescription,cancel } = state;
+  const { propertyName, propertyDescription} = state;
 
   return {
     propertyName,

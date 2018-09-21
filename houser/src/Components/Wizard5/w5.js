@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import { updateDesiredRent, updateCancel} from "../../ducks/reducer";
+import { updateDesiredRent, updateCancel,updateSubmit} from "../../ducks/reducer";
 import Banner from "../Banner/banner";
 import axios from "axios";
 import "./w5.css";
@@ -44,10 +44,16 @@ class Wizard5 extends Component {
         mortgage,
         desiredRent
       })
-      .then(() => this.props.history.push("/dashboard"))
+      .then(() => {
+        this.props.updateSubmit()
+        this.props.history.push("/dashboard")}
+        )
+
       .catch(err => {
         console.log("submit axios request");
-      });
+      })
+      // .then(()=>
+      // {this.props.updateSubmit})
   }
 
   render() {
@@ -116,7 +122,7 @@ function mapStateToProps(state) {
 // since we are returning all of state, we do not need to specifically name updateDesiredRent as a mapStateToProps parameter or in the return statement
 export default connect(
   mapStateToProps,
-  { updateDesiredRent, updateCancel}
+  { updateDesiredRent, updateCancel,updateSubmit}
 )(Wizard5);
 
 //alt shift f
